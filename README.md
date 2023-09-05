@@ -18,3 +18,15 @@ npm init
 ```
 npm install -g express pg cors nodemon
 ```
+
+## How to run the code
+
+1. Change to the root directory of the project
+2. Run `nodemon server.js`
+
+
+# FAQ
+
+## Missing modules?
+
+Try to run `npm update`.
