@@ -29,4 +29,4 @@ npm install -g express pg cors nodemon
 
 ## Missing modules?
 
-Try to run `npm update`.
+Try to run `npm install`.
