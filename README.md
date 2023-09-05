@@ -2,7 +2,8 @@
 
 ## Prerequisites
 
-* Download Node.js: https://github.com/nodesource/distributions
+* Node.js: https://github.com/nodesource/distributions
+* PostgreSQL: https://www.postgresql.org/download/
 
 ## Setup
 
