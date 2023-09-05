@@ -16,5 +16,5 @@ npm init
 2. Install the following packages.
 
 ```
-npm install express pg cors
+npm install -g express pg cors nodemon
 ```
