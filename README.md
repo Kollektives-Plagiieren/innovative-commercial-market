@@ -23,3 +23,10 @@ npm install -g express pg cors nodemon
 
 1. Change to the root directory of the project
 2. Run `nodemon server.js`
+
+
+# FAQ
+
+## Missing modules?
+
+Try to run `npm update`.
