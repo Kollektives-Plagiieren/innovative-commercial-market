@@ -45,7 +45,7 @@ exports.login = async(req, res) => {
 
         // User not found in db --> unathenticated
         if (user.rows.length === 0) {
-            return res.status(401).json("Password or email is incorrect");
+            return res.status(401).json("Email is not registered");
         }
 
         // Compare hashed password with db password
@@ -53,7 +53,7 @@ exports.login = async(req, res) => {
 
         // Wrong password
         if (!validPassword) {
-            return res.status(401).json("Password or email is incorrect");
+            return res.status(401).json("Password is incorrect");
         }
 
         // Correct password
