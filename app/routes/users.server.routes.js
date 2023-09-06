@@ -1,11 +1,19 @@
-const user = require('../controllers/users.server.controller');
+const user = require('../controllers/users.server.controller'),
+    validate = require('../controllers/validation.server.controller')
+    authorize = require('../controllers/authorization.server.controller');
 
 module.exports = function(app) {    
     app.route('/signup')
-        .post(user.create);
+        .post(validate, user.signup);
 
     app.route('/login')
-        .post(user.login);
+        .post(validate, user.login);
+
+    app.route('/verify')
+        .post(authorize, user.verify);
+
+    app.route('/profile')
+        .post(authorize, user.list);
 
     // app.route('/users/:userId')
     //     .get(user.list)

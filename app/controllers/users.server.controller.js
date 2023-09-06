@@ -4,7 +4,7 @@ const pool = require('../../config/db'),
 
 
 // CRUD operations
-exports.create = async(req, res, next) => {
+exports.signup = async(req, res) => {
     try {
         const { name, email, password } = req.body;
         const user = await pool.query("SELECT * FROM users WHERE user_email = $1", [
@@ -13,7 +13,7 @@ exports.create = async(req, res, next) => {
 
         // User already exists --> unathenticated
         if (user.rows.length !== 0) {
-            return res.status(401).send("User already exists");
+            return res.status(401).json("User already exists");
         }
 
         // Hash the password
@@ -29,13 +29,14 @@ exports.create = async(req, res, next) => {
         // Generating the JWT
         const token = jwtGenerator(newUser.rows[0].user_id);
 
-        res.json({ token });
+        return res.json({ token });
     } catch (error) {
         console.error(error.message);
+        res.status(500).json({ msg: "Server error" });
     }
 };
 
-exports.login = async(req, res, next) => {
+exports.login = async(req, res) => {
     try {
         const { email, password } = req.body;
         const user = await pool.query("SELECT * FROM users WHERE user_email = $1", [
@@ -44,7 +45,7 @@ exports.login = async(req, res, next) => {
 
         // User not found in db --> unathenticated
         if (user.rows.length === 0) {
-            return res.status(401).send("Password or email is incorrect");
+            return res.status(401).json("Password or email is incorrect");
         }
 
         // Compare hashed password with db password
@@ -52,17 +53,43 @@ exports.login = async(req, res, next) => {
 
         // Wrong password
         if (!validPassword) {
-            return res.status(401).send("Password or email is incorrect");
+            return res.status(401).json("Password or email is incorrect");
         }
 
         // Correct password
         const token = jwtGenerator(user.rows[0].user_id);
 
-        res.json({ token });
+        return res.json({ token });
     } catch (error) {
-        
+        console.error(error.message);
+        res.status(500).json({ msg: "Server error" });
     }
-}
+};
+
+exports.verify = async(req, res) => {
+    try {
+        res.json(true);
+        // res.redirect('/profile')
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).json({ msg: "Server error" });
+    }
+};
+
+exports.list = async(req, res) => {
+    try {
+        const user = await pool.query(
+            "SELECT user_name FROM users WHERE user_id = $1", [
+                req.user.id
+            ]
+        );
+
+        res.json(user.rows[0]);
+    } catch (error) {
+        console.error(error.message);
+        res.satus(500).json({ msg: "Server error" });
+    }
+};
 
 // exports.list = async(req, res, next) => {
 //     try {

@@ -3,10 +3,12 @@ const jwt = require('jsonwebtoken'),
 
 function jwtGenerator(user_id) {
     const payload = {
-        user: user_id
+        user: {
+            id: user_id
+        }
     }
 
-    return jwt.sign(payload, config.jwtSecret, { expiresIn: "1hr" })
+    return jwt.sign(payload, config.jwtSecret, { expiresIn: "1h" })
 }
 
 module.exports = jwtGenerator;
