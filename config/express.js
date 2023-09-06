@@ -20,7 +20,8 @@ module.exports = function() {
     app.use(bodyParser.urlencoded({
         extended: true
     }));
-    app.use(bodyParser.json());
+    // app.use(bodyParser.json());
+    app.use(express.json());
     app.use(methodOverride());
 
     // Cookie settings
@@ -35,6 +36,7 @@ module.exports = function() {
     app.set('view engine', 'ejs');
 
     require('../app/routes/index.server.routes.js')(app);
+    require('../app/routes/users.server.routes.js')(app);
 
     // Handling static files
     app.use(express.static('./public'));
