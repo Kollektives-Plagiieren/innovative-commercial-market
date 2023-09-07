@@ -13,7 +13,7 @@ module.exports = function(app) {
         .post(authorize, user.verify);
 
     app.route('/profile')
-        .post(authorize, user.list);
+        .get(authorize, user.list);
 
     // app.route('/users/:userId')
     //     .get(user.list)
