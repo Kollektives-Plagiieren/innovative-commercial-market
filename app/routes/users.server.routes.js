@@ -12,6 +12,9 @@ module.exports = function(app) {
     app.route('/verify')
         .post(authorize, user.verify);
 
+    app.route('/verify/email')
+        .get(user.sendEmail);
+
     app.route('/profile')
         .get(authorize, user.list);
 

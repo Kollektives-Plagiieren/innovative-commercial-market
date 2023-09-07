@@ -1,7 +1,8 @@
 const pool = require('../../config/db'),
     bcrypt = require('bcrypt'),
-    jwtGenerator = require('../../config/jwt');
-
+    jwtGenerator = require('../../config/jwt'),
+    nodemailer = require('nodemailer'),
+    config = require('../../config/env/development');
 
 // CRUD operations
 exports.signup = async(req, res) => {
@@ -87,7 +88,39 @@ exports.list = async(req, res) => {
         res.json(user.rows[0]);
     } catch (error) {
         console.error(error.message);
-        res.satus(500).json({ msg: "Server error" });
+        res.status(500).json({ msg: "Server error" });
+    }
+};
+
+exports.sendEmail = async(req, res) => {
+    try {
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                type: 'OAUTH2',
+                user: config.auth.user,
+                pass: config.auth.pass,
+                clientId: config.oauth.clientId,
+                clientSecret: config.oauth.clientSecret,
+                refreshToken: config.oauth.refreshToken
+            }
+        });
+
+        const mailOptions = {
+            from: config.auth.user,
+            to: 'dev.kk.nguyen@gmail.com',
+            subject: 'Email verification',
+            text: 'Hello, Sir. Your computer has virus'
+        };
+
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.error('Error sending email:', error);
+            }
+        });
+        res.json({ msg: "Verification email sent"});
+    } catch (error) {
+        res.status(500).json({ msg: "Server error" });
     }
 };
 
