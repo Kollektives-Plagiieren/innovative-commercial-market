@@ -1,0 +1,61 @@
+import React, { Fragment, useState } from "react";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+
+const Signup = ({setAuth}) => {
+    const [inputs, setInputs] = useState({
+        email: "",
+        password: "",
+        name: ""
+    });
+
+    const { email, password, name } = inputs;
+
+    const onChange = e => setInputs({...inputs, [e.target.name]: e.target.value});
+
+    const onSubmitForm = async e => {
+        e.preventDefault();
+        try {
+            const body = { email, password, name };
+            const response = await fetch(
+                "http://localhost:5000/signup", {
+                    method: "POST",
+                    headers: {
+                        "Content-type": "application/json",
+                        "Access-Control-Allow-Origin": "*",
+                        'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+                    },
+                    body: JSON.stringify(body)
+                }
+            );
+
+            const result = await response.json();
+
+            if (result.jwtToken) {
+                localStorage.setItem("jwt_token", result.jwtToken);
+                setAuth(true);
+                toast.success("Signup successful");
+            } else {
+                setAuth(false);
+                toast.error(result);
+            }
+        } catch (error) {
+            console.error(error.message);
+        }
+    };
+    
+    return (
+        <Fragment>
+            <h1 className="text-center my-5">Signup</h1>
+            <form onSubmit={onSubmitForm}>
+                <input type="text" name="email" value={email} placeholder="email" onChange={e => onChange(e)} className="form-control my-3" />
+                <input type="password" name="password" value={password} placeholder="password" onChange={e => onChange(e)} className="form-control my-3" />
+                <input type="text" name="name" value={name} placeholder="name" onChange={e => onChange(e)} className="form-control my-3" />
+                <button className="btn btn-success btn-block">Sign up</button>
+            </form>
+            <Link to="/login">Log in</Link>
+        </Fragment>
+    );
+};
+
+export default Signup;
