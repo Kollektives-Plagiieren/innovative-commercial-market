@@ -29,7 +29,7 @@ exports.signup = async(req, res) => {
 
         // Generating the JWT
         const token = jwtGenerator(newUser.rows[0].user_id);
-
+        
         return res.json({ token });
     } catch (error) {
         console.error(error.message);
