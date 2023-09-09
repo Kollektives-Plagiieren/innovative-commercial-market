@@ -1,10 +1,11 @@
 module.exports = function(req, res, next) {
     const { email, name, password } = req.body;
-
+    var validator = require("email-validator");
     function validEmail(userEmail) {
         // TODO: use a npm package like in
         // https://github.com/manishsaraan/email-validator to validate email addresses
-        return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(userEmail);
+        // return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(userEmail);
+        return validator.validate(userEmail)
     }
 
     if (req.path === '/signup') {
