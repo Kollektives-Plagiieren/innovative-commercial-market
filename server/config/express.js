@@ -6,7 +6,8 @@ const express = require('express'),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
     config = require('./config'),
-    session = require('express-session');
+    session = require('express-session'),
+    cors = require('cors');
 
 module.exports = function() {
     const app = express();
@@ -16,6 +17,8 @@ module.exports = function() {
     } else if (process,env.NODE_ENV === 'production') {
         app.use(compress());
     }
+
+    app.use(cors({origin: "http://localhost:3000"}));
 
     app.use(bodyParser.urlencoded({
         extended: true
