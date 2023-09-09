@@ -1,5 +1,7 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import "./App.css";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
 import {
   BrowserRouter as Router,
@@ -13,7 +15,26 @@ import Login from "./components/Login";
 import Profile from "./components/Profile";
 import PageNotFound from "./components/PageNotFound";
 
+
 function App() {
+  const checkAuthenticated = async() => {
+    try {
+      const response = await fetch("http://localhost:5000/verify", {
+        method: "POST",
+        headers: {token: localStorage.token}
+      });
+
+      const result = await response.json();
+
+      result === true ? setIsAuthenticated(true) : setIsAuthenticated(false);
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+
+  useEffect(() => {
+    checkAuthenticated();
+  }, []);
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -31,6 +52,7 @@ function App() {
             <Route exact path="/profile" element={isAuthenticated ? (<Profile setAuth={setAuth}/>) : (<Navigate to="/login" />)} />
             <Route path="/*" element={<PageNotFound />}/>
           </Routes>
+          <ToastContainer />
         </div>
       </Router>
     </Fragment>
