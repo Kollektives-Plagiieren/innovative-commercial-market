@@ -2,8 +2,7 @@ const jwt = require('jsonwebtoken'),
     config = require('../../config/env/development');
 
 module.exports = function(req, res, next) {
-    const token = req.header("jwt_token");
-    console.log("The token is: " + token);
+    const token = req.header("token");
 
     // Check if token exists
     if (!token) {

@@ -21,8 +21,7 @@ const Login = ({setAuth}) => {
                 "http://localhost:5000/login", {
                     method: "POST",
                     headers: {
-                        "Content-type": "application/json",
-                        "Access-Control-Allow-Origin": "*",'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+                        "Content-type": "application/json"
                     },
                     body: JSON.stringify(body)
                 }
@@ -30,8 +29,8 @@ const Login = ({setAuth}) => {
 
             const result = await response.json();
 
-            if (result.jwtToken) {
-                localStorage.setItem("jwt_token", result.jwtToken);
+            if (result.token) {
+                localStorage.setItem("token", result.token);
                 setAuth(true);
                 toast.success("Login successful");
             } else {

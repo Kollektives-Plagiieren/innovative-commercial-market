@@ -7,21 +7,21 @@ const Profile = ({setAuth}) => {
     const getProfile = async() => {
         try {
             const result = await fetch("http://localhost:5000/profile", {
-                method: "POST",
-                headers: {jwt_token: localStorage.token}
+                method: "GET",
+                headers: {token: localStorage.token}
             });
 
             const data = await result.json();
             setName(data.user_name);
         } catch (error) {
-            console.error.apply(error.message);
+            console.error(error.message);
         }
     };
 
     const logout = async e => {
         e.preventDefault();
         try {
-            localStorage.removeItem("jwt_token");
+            localStorage.removeItem("token");
             setAuth(false);
             toast.success("Logout successful");
         } catch (error) {
