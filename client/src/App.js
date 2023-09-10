@@ -10,6 +10,7 @@ import {
   Navigate
 } from "react-router-dom";
 
+import Home from "./components/Home";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Profile from "./components/Profile";
@@ -47,6 +48,7 @@ function App() {
       <Router>
         <div className="container">
           <Routes>
+            <Route exact path="/" element={<Home />} />
             <Route exact path="/signup" element={!isAuthenticated ? (<Signup setAuth={setAuth}/>) : (<Navigate to="/login" />)} />
             <Route exact path="/login" element={!isAuthenticated ? (<Login setAuth={setAuth}/>) : (<Navigate to="/profile" />)} />
             <Route exact path="/profile" element={isAuthenticated ? (<Profile setAuth={setAuth}/>) : (<Navigate to="/login" />)} />
