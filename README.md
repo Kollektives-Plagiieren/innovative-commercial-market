@@ -1,5 +1,11 @@
 # innovative-commercial-market
 
+## Features
+
+* Login/logout mechanism
+* JWT authentication
+* Automatic email verification
+
 ## Prerequisites
 
 * Node.js: https://github.com/nodesource/distributions
