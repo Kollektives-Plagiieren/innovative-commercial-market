@@ -4,7 +4,7 @@
 
 * Login/logout mechanism
 * JWT authentication
-* Automatic email verification
+* Automatic email verification (OAuth2)
 
 ## Prerequisites
 
