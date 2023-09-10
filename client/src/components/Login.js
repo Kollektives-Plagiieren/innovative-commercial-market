@@ -46,9 +46,9 @@ const Login = ({setAuth}) => {
         <Fragment>
             <h1 className="text-center my-5">Login</h1>
             <form onSubmit={onSubmitForm}>
-                <input type="text" name="email" value={email} onChange={e => onChange(e)} className="form-control my-3" />
-                <input type="password" name="password" value={password} onChange={e => onChange(e)} className="form-control my-3" />
-                <button className="btn btn-success btn-block">Submit</button>
+                <input type="text" name="email" value={email} placeholder="email" onChange={e => onChange(e)} className="form-control my-3" />
+                <input type="password" name="password" value={password} placeholder="password" onChange={e => onChange(e)} className="form-control my-3" />
+                <button className="btn btn-success btn-block">Log in</button>
             </form>
             <Link to="/signup">Sign up</Link>
         </Fragment>
