@@ -48,7 +48,7 @@ body {
     background-position: center;
     margin: 0;
     padding: 0;
-    font-family: 'Ubuntu', Arial, sans-serif;
+    font-family: 'Ubuntu', 'Segoe UI', Arial, sans-serif;
     color: white;
     height: 100vh;
     display: flex;
@@ -57,10 +57,10 @@ body {
 }
 
 .home {
-    padding: 20px;
     border-radius: 40px;
     width: 70%;
-    margin-left: 5rem;
+    margin-left: 10%;
+    margin-top: 15%;
     color: white;
 }
 
