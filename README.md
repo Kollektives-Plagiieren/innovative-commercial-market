@@ -7,6 +7,10 @@
 * Automatic email verification (OAuth2)
 * Background music + audio visualization
 
+## Future plans
+
+* Chat rooms
+
 ## Prerequisites
 
 * Node.js: https://github.com/nodesource/distributions
