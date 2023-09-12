@@ -5,6 +5,7 @@
 * Login/logout mechanism
 * JWT authentication
 * Automatic email verification (OAuth2)
+* Background music + audio visualization
 
 ## Prerequisites
 
