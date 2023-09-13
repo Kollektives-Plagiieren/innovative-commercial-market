@@ -28,13 +28,14 @@
     font-weight: 700;
     font-size: 1.2em;
     position: relative;
-    overflow: hidden;
+    cursor: pointer;
 }
 
 .navBox a {
     text-decoration: none; /* Remove the underscores */
     color: white;
     z-index: 1;
+    display: block
 }
 
 .navBox::after {
