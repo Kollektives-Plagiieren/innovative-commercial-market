@@ -1,0 +1,52 @@
+.navbar {
+    padding: 0;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out 2.5s forwards;
+}
+
+.navbar ul {
+    list-style-type: none; /* Remove the bullet point symbols */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex; /* Enable the following setting */
+    justify-content: space-evenly;
+    justify-content: flex-start;
+}
+
+.navbar li {
+    padding: 1.5em; /* Add margin between buttons */
+}
+
+.navBox {
+    box-sizing: border-box;
+    width: 7em;
+    height: 2.5em;
+    background-color: transparent;
+    /* border: 0.1em solid white; */
+    border-left: 0.5em solid white;
+    display: flex; /* Enable the two following settings */
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.5s ease; /* Smooth transition to another background color */
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.navBox a {
+    text-decoration: none; /* Remove the underscores */
+    color: white;
+}
+
+.navBox:hover {
+    background-color: rgb(0, 0, 0, 0.5);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "../css/Home.css";
+import "../css/NavBar.css";
 
 import {Wave} from "@foobar404/wave";
 
@@ -23,6 +24,16 @@ const Home = () => {
 
       return (
         <div className="homeContainer">
+            <div>
+                <nav className="navbar">
+                    <ul>
+                        <li><div className="navBox"><a href="/">Home</a></div></li>
+                        <li><div className="navBox"><a href="/login">Login</a></div></li>
+                        {/* <li><div className="navBox"><a href="/signup">Signup</a></div></li> */}
+                        <li><div className="navBox"><a href="/profile">Profile</a></div></li>
+                    </ul>
+                </nav>
+            </div>
             <h1 className="homeHeader">Welcome, traveler!</h1>
             <div className="homeText">
                 <p className="homeSen1">Emerge in a world full of limitless possibilities, where creativity knows no bounds.</p>
