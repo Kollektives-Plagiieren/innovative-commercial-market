@@ -10,7 +10,6 @@
     padding: 0;
     width: 100%;
     display: flex; /* Enable the following setting */
-    justify-content: space-evenly;
     justify-content: flex-start;
 }
 
@@ -22,24 +21,38 @@
     box-sizing: border-box;
     width: 7em;
     height: 2.5em;
-    background-color: transparent;
-    /* border: 0.1em solid white; */
     border-left: 0.5em solid white;
     display: flex; /* Enable the two following settings */
     align-items: center;
     justify-content: center;
-    transition: background-color 0.5s ease; /* Smooth transition to another background color */
     font-weight: 700;
     font-size: 1.2em;
+    position: relative;
+    overflow: hidden;
 }
 
 .navBox a {
     text-decoration: none; /* Remove the underscores */
     color: white;
+    z-index: 1;
 }
 
-.navBox:hover {
-    background-color: rgb(0, 0, 0, 0.5);
+.navBox::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: bottom center;
+    background: rgb(0, 0, 0, 0.5);
+    z-index: -1;
+    transition: transform 0.3s;
+}
+
+.navBox:hover::after {
+    transform: scaleY(1);
 }
 
 @keyframes fadeIn {
