@@ -9,24 +9,27 @@
     display: block;
     color: white;
     padding-left: 7%;
-    padding-right: 62%;
+    padding-right: 7%;
+    font-size: 16px;
 }
 
 .homeHeader {
     opacity: 0;
     animation: fadeIn 2s ease-in-out 2.5s forwards;
-    font-size: 5rem;
-    padding-bottom: 5rem;
-    padding-top: 12rem;
+    font-size: 4.75em;
+    padding-bottom: 0.75em;
+    padding-top: 2em;
     margin-bottom: 0;
+    padding-right: 65%;
 }
 
 .homeText {
     display: block;
     opacity: 0;
     animation: fadeIn 2.5s ease-in-out forwards;
-    font-size: 2rem;
-    line-height: 2rem;
+    font-size: 2em;
+    line-height: 1.5em;
+    padding-right: 67%;
 }
 
 .homeSen1 {
@@ -34,7 +37,7 @@
     opacity: 0;
     animation: fadeIn 2.5s ease-in-out forwards;
     animation-delay: 4.5s;
-    padding-bottom: 4rem;
+    padding-bottom: 1em;
     margin-bottom: 0;
 }
 
@@ -42,7 +45,7 @@
     opacity: 0;
     animation: fadeIn 2.5s ease-in-out forwards;
     animation-delay: 7s;
-    padding-bottom: 4rem;
+    padding-bottom: 1em;
     margin-bottom: 0;
 }
 
@@ -50,14 +53,15 @@
     opacity: 0;
     animation: fadeIn 2.5s ease-in-out forwards;
     animation-delay: 9s;
-    padding-bottom: 5rem;
+    padding-bottom: 2em;
     margin-bottom: 0;
 }
 
 .homeCanvas {
     opacity: 0;
     animation: fadeIn 5s ease-in-out 11s forwards;
-    width: 90%
+    padding-right: 65%;
+    width: 95%
 }
 
 @keyframes fadeIn {
