@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Login = ({setAuth}) => {
@@ -38,12 +38,20 @@ const Login = ({setAuth}) => {
         }
     };
 
+    // Autofocus to the email input field
+    const inputElement = useRef(null);
+    useEffect(() => {
+        if (inputElement.current) {
+            inputElement.current.focus();
+        }
+    }, []);
+
     return (
         <Fragment>
             <h1 className="text-center my-5">Login</h1>
             <form onSubmit={onSubmitForm}>
-                <input type="text" name="email" value={email} placeholder="email" onChange={e => onChange(e)} className="form-control my-3" />
-                <input type="password" name="password" value={password} placeholder="password" onChange={e => onChange(e)} className="form-control my-3" />
+                <input ref={inputElement} type="text" name="email" value={email} placeholder="email" onChange={e => onChange(e)} className="form-control my-3" required/>
+                <input type="password" name="password" value={password} placeholder="password" onChange={e => onChange(e)} className="form-control my-3" required />
                 <button className="btn btn-success btn-block">Log in</button>
             </form>
             <Link to="/signup">Sign up</Link>
