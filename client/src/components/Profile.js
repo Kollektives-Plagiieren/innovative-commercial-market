@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { toast } from "react-toastify";
 
 const Profile = ({setAuth}) => {
     const [name, setName] = useState("");
@@ -23,7 +22,6 @@ const Profile = ({setAuth}) => {
         try {
             localStorage.removeItem("token");
             setAuth(false);
-            toast.success("Logout successful");
         } catch (error) {
             console.error(error.message);
         }
