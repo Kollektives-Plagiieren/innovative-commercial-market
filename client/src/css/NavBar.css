@@ -49,7 +49,7 @@
     transition: transform 0.3s;
 }
 
-.navBox:hover a {
+.navBox a:hover {
     color: peru;
 }
 
