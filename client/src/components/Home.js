@@ -35,9 +35,9 @@ const Home = () => {
             </div>
             <h1 className="homeHeader">Welcome, traveler!</h1>
             <div className="homeText">
-                <p className="homeSen1">Emerge in a world full of limitless possibilities, where creativity knows no bounds.</p>
-                <p className="homeSen2">Welcome to our digital haven, a space crafted by us, for us.</p>
-                <p className="homeSen3">Explore, create, and inspire with us on this exciting journey.</p>
+                <p>Emerge in a world full of limitless possibilities, where creativity knows no bounds.</p>
+                <p>Welcome to our digital haven, a space crafted by us, for us.</p>
+                <p>Explore, create, and inspire with us on this exciting journey.</p>
             </div>
             <canvas id="canvas" className="homeCanvas"></canvas>
             <div id="audio"></div>
