@@ -1,5 +1,10 @@
 # innovative-commercial-market
 
+## Preview
+
+![image](https://github.com/Kollektives-Plagiieren/innovative-commercial-market/assets/58821481/e7990873-2dde-4cb2-b6fe-736b47ac4d93)
+
+
 ## Features
 
 * Login/logout mechanism
