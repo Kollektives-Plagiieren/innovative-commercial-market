@@ -23,23 +23,31 @@
 
 ## Setup
 
-1. Initiate `npm` in order in to keep track of installed packages in our application.
+Install the necessary packages and dependencies for the backend
 
-```
-npm init
-```
-
-2. Install the following packages.
-
-```
-npm install -g express pg cors nodemon
+```bash
+cd /server && npm install
 ```
 
-## How to run the code
+Install the necessary packages and dependencies for the frontend.
 
-1. Change to the root directory of the project
-2. Run `nodemon server.js`
+```bash
+cd /client && npm install
+```
 
+## How to run the code (currently, only the developer mode is available)
+
+Start the backend.
+
+```bash
+cd /server && nodemon server.js
+```
+
+Start the frontend.
+
+```bash
+cd /client && npm start
+```
 
 # FAQ
 
