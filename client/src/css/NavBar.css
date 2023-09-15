@@ -27,7 +27,6 @@
     font-weight: 700;
     font-size: 1.4em;
     position: relative;
-    cursor: pointer;
 }
 
 .navBox a {
@@ -36,7 +35,7 @@
     z-index: 1;
 }
 
-.navBox::after {
+.navBox a:after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -45,7 +44,7 @@
     height: 100%;
     transform: scaleY(0);
     transform-origin: bottom center;
-    background: rgb(0, 0, 0, 0.5);
+    /* background: rgb(0, 0, 0, 0.5); */
     z-index: -1;
     transition: transform 0.3s;
 }
@@ -54,7 +53,7 @@
     color: peru;
 }
 
-.navBox:hover::after {
+.navBox a:hover::after {
     transform: scaleY(1);
     border-left: 0.5em solid peru;
 }
