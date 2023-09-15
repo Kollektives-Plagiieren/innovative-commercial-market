@@ -29,7 +29,6 @@ const Home = () => {
                     <ul>
                         <li><div className="navBox"><a href="/">Home</a></div></li>
                         <li><div className="navBox"><a href="/login">Login</a></div></li>
-                        {/* <li><div className="navBox"><a href="/signup">Signup</a></div></li> */}
                         <li><div className="navBox"><a href="/profile">Profile</a></div></li>
                     </ul>
                 </nav>
@@ -43,9 +42,6 @@ const Home = () => {
             <canvas id="canvas" className="homeCanvas"></canvas>
             <div id="audio"></div>
             <audio autoPlay loop>
-                {/* <source src="audio/in-the-forest-ambient-acoustic-guitar-instrumental-background-music-for-videos-5718.mp3" type="audio/mpeg" /> */}
-                {/* <source src="audio/the-introvert-michael-kobrin-10959.mp3" type="audio/mpeg" /> */}
-                {/* <source src="audio/smile-relaxing-cinematic-background-piano-music-162112.mp3" type="audio/mpeg" /> */}
                 <source src="/audio/soft-dreamy-ambient-113221.mp3" type="audio/mpeg" />
                 Your browser does not support the audio element.
             </audio>
