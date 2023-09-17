@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import "../css/Login.css";
 
 const Login = ({setAuth}) => {
     const [inputs, setInputs] = useState({
@@ -48,13 +48,32 @@ const Login = ({setAuth}) => {
 
     return (
         <Fragment>
-            <h1 className="text-center my-5">Login</h1>
-            <form onSubmit={onSubmitForm}>
-                <input ref={inputElement} type="text" name="email" value={email} placeholder="email" onChange={e => onChange(e)} className="form-control my-3" required/>
-                <input type="password" name="password" value={password} placeholder="password" onChange={e => onChange(e)} className="form-control my-3" required />
-                <button className="btn btn-success btn-block">Log in</button>
-            </form>
-            <Link to="/signup">Sign up</Link>
+            <div className="loginBackground">
+                <div className="loginContainer">
+                    <h1 className="loginHeader">Login</h1>
+                    <form onSubmit={onSubmitForm} className="loginForm">
+                        <div className="loginInput">
+                            <label for="">Email</label>
+                            <input ref={inputElement} type="email" name="email" value={email} onChange={e => onChange(e)} required />
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </div>
+                        <div className="loginInput">
+                            <label for="">Password</label>
+                            <input type="password" name="password" value={password} onChange={e => onChange(e)} required />
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                        </div>
+                        <div className="forget">
+                            <label for=""><input type="checkbox"></input></label>
+                            <span>Remember me</span>
+                            <a href="#">Forgot your password?</a>
+                        </div>
+                        <button className="loginButton">Log in</button>
+                        <div className="loginSignup">
+                            <p>Don't have an account? <a href="/signup">Sign up</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </Fragment>
     );
 };
