@@ -1,7 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
 import "./App.css";
-import "react-toastify/dist/ReactToastify.css";
-import { ToastContainer } from "react-toastify";
 
 import {
   BrowserRouter as Router,
@@ -54,7 +52,6 @@ function App() {
             <Route exact path="/profile" element={isAuthenticated ? (<Profile setAuth={setAuth}/>) : (<Navigate to="/login" />)} />
             <Route path="/*" element={<PageNotFound />}/>
           </Routes>
-          <ToastContainer />
         </div>
       </Router>
     </Fragment>

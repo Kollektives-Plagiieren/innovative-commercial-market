@@ -1,12 +1,14 @@
 .homeContainer {
     box-sizing: border-box;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-image: url('../../public/img/sea-2755908.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    display: block;
+    background-attachment: scroll;
+    display: flex;
+    flex-direction: column;
     color: white;
     padding-left: 7%;
     padding-right: 7%;
@@ -18,13 +20,14 @@
     animation: fadeIn 2s ease-in-out 2.5s forwards;
     font-size: 4.75em;
     padding-bottom: 0.75em;
-    padding-top: 2em;
+    padding-top: 1.5em;
     margin-bottom: 0;
     padding-right: 65%;
 }
 
 .homeText {
-    display: block;
+    display: flex;
+    flex-direction: column;
     opacity: 0;
     animation: fadeIn 2.5s ease-in-out forwards;
     font-size: 2em;
@@ -32,7 +35,7 @@
     padding-right: 67%;
 }
 
-.homeSen1 {
+.homeText p:nth-child(1) {
     width: 100%;
     opacity: 0;
     animation: fadeIn 2.5s ease-in-out forwards;
@@ -41,7 +44,7 @@
     margin-bottom: 0;
 }
 
-.homeSen2 {
+.homeText p:nth-child(2) {
     opacity: 0;
     animation: fadeIn 2.5s ease-in-out forwards;
     animation-delay: 7s;
@@ -49,7 +52,7 @@
     margin-bottom: 0;
 }
 
-.homeSen3 {
+.homeText p:nth-child(3) {
     opacity: 0;
     animation: fadeIn 2.5s ease-in-out forwards;
     animation-delay: 9s;

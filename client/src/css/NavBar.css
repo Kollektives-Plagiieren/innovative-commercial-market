@@ -1,7 +1,7 @@
 .navbar {
     padding: 0;
     opacity: 0;
-    animation: fadeIn 2s ease-in-out 2.5s forwards;
+    animation: fadeIn 2s ease-in-out forwards;
 }
 
 .navbar ul {
@@ -21,24 +21,21 @@
     box-sizing: border-box;
     width: 7em;
     height: 2.5em;
-    border-left: 0.5em solid white;
     display: flex; /* Enable the two following settings */
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    font-size: 1.2em;
+    font-size: 1.4em;
     position: relative;
-    cursor: pointer;
 }
 
 .navBox a {
     text-decoration: none; /* Remove the underscores */
     color: white;
     z-index: 1;
-    display: block
 }
 
-.navBox::after {
+.navBox a:after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -47,13 +44,18 @@
     height: 100%;
     transform: scaleY(0);
     transform-origin: bottom center;
-    background: rgb(0, 0, 0, 0.5);
+    /* background: rgb(0, 0, 0, 0.5); */
     z-index: -1;
     transition: transform 0.3s;
 }
 
-.navBox:hover::after {
+.navBox a:hover {
+    color: peru;
+}
+
+.navBox a:hover::after {
     transform: scaleY(1);
+    border-left: 0.5em solid peru;
 }
 
 @keyframes fadeIn {
