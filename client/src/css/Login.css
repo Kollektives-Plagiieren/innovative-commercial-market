@@ -1,0 +1,136 @@
+.loginBackground {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('../../public/img/milky-way-8153503.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(255, 255, 255, 0.8);
+    padding-top: 7%;
+    padding-left: 35%;
+    padding-right: 35%;
+    font-size: 16px;
+}
+
+.loginContainer {
+    position: relative;
+    padding: 3em 4em 2em 4em;
+    background-color: rgb(0, 0, 0, 0.1);
+    border-radius: 2em;
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    backdrop-filter: blur(3px);
+    width: 70%
+}
+
+.loginContainer:focus-within {
+    border-radius: 2em;
+    background-color: rgb(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+}
+
+.loginHeader {
+    display: flex;
+    justify-content: center;
+    font-size: 4.75em;
+    margin-bottom: 0.5em;
+}
+
+.loginInput {
+    background: transparent;
+    color: white;
+    border: none;
+    width: 100%;
+    padding-bottom: 0.5em;
+    margin-bottom: 3em;
+    border-bottom: solid 0.1em rgb(255, 255, 255, 0.5);
+    position: relative;
+}
+
+.loginInput label {
+    position: absolute;
+    font-size: 1.2em;
+    z-index: -1;
+    transform: translateY(-1.5em);
+    color: white;
+    pointer-events: none;
+    transition: 0.5s ease;
+}
+
+.loginInput input {
+    border: none;
+    color: white;
+    background: transparent;
+    width: 85%;
+    outline: none;
+}
+
+input:focus ~ label, input:valid ~ label {
+    top: -1em;
+}
+
+.loginInput ion-icon {
+    font-size: 1.3em;
+    padding-left: 1em;
+}
+
+.forget {
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding-bottom: 1em;
+}
+
+.forget span {
+    margin-left: 0.2em;
+}
+
+.forget a {
+    margin-left: 3em;
+    color: antiquewhite;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.forget a:hover {
+    text-decoration: underline;
+}
+
+.loginButton {
+    border-radius: 4em;
+    color: black;
+    display: block;
+    background: white;
+    border: none;
+    height: 3em;
+    width: 100%;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-top: 1.5em;
+    font-weight: 700;
+    margin-bottom: 1.5em;
+}
+
+.loginSignup a {
+    margin-left: 0.2em;
+    color: antiquewhite;
+    font-weight: 700;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
