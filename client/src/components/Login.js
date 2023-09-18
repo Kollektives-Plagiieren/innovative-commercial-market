@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useRef, useState } from "react";
 import "../css/Login.css";
+import "../css/NavBar.css";
 
 const Login = ({setAuth}) => {
     const [inputs, setInputs] = useState({
@@ -49,17 +50,26 @@ const Login = ({setAuth}) => {
     return (
         <Fragment>
             <div className="loginBackground">
+                <div>
+                    <nav className="navbar">
+                        <ul>
+                            <li><div className="navBox"><a href="/">Home</a></div></li>
+                            <li><div className="navBox"><a href="/login">Login</a></div></li>
+                            <li><div className="navBox"><a href="/profile">Profile</a></div></li>
+                        </ul>
+                    </nav>
+                </div>
                 <div className="loginContainer">
                     <h1 className="loginHeader">Login</h1>
                     <form onSubmit={onSubmitForm} className="loginForm">
                         <div className="loginInput">
+                            <input ref={inputElement} type="text" name="email" value={email} onChange={e => onChange(e)} required />
                             <label for="">Email</label>
-                            <input ref={inputElement} type="email" name="email" value={email} onChange={e => onChange(e)} required />
                             <ion-icon name="mail-outline"></ion-icon>
                         </div>
                         <div className="loginInput">
-                            <label for="">Password</label>
                             <input type="password" name="password" value={password} onChange={e => onChange(e)} required />
+                            <label for="">Password</label>
                             <ion-icon name="lock-closed-outline"></ion-icon>
                         </div>
                         <div className="forget">
