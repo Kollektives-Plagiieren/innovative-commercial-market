@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useRef, useState } from "react";
 import "../css/Login.css";
+import "../css/NavBar.css";
 
 const Login = ({setAuth}) => {
     const [inputs, setInputs] = useState({
@@ -49,6 +50,15 @@ const Login = ({setAuth}) => {
     return (
         <Fragment>
             <div className="loginBackground">
+                <div>
+                    <nav className="navbar">
+                        <ul>
+                            <li><div className="navBox"><a href="/">Home</a></div></li>
+                            <li><div className="navBox"><a href="/login">Login</a></div></li>
+                            <li><div className="navBox"><a href="/profile">Profile</a></div></li>
+                        </ul>
+                    </nav>
+                </div>
                 <div className="loginContainer">
                     <h1 className="loginHeader">Login</h1>
                     <form onSubmit={onSubmitForm} className="loginForm">

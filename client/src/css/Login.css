@@ -7,33 +7,26 @@
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: scroll;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: rgb(255, 255, 255, 0.8);
-    padding-top: 7%;
-    padding-left: 35%;
-    padding-right: 35%;
-    font-size: 16px;
+    padding-left: 7%;
+    padding-right: 7%;
+    color: white;
 }
 
 .loginContainer {
-    position: relative;
-    padding: 3em 4em 2em 4em;
-    background-color: rgb(0, 0, 0, 0.1);
+    padding: 3em 2em 2em 2em;
+    background-color: rgb(0, 0, 0, 0.05);
     border-radius: 2em;
-    display: block;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     align-items: center;
     backdrop-filter: blur(3px);
-    width: 70%
+    margin: 5em 38% 0 38%;
+    font-size: 16px;
 }
 
 .loginContainer:focus-within {
     border-radius: 2em;
-    background-color: rgb(0, 0, 0, 0.3);
+    background-color: rgb(0, 0, 0, 0.2);
     transition: background-color 0.3s;
 }
 
@@ -42,6 +35,7 @@
     justify-content: center;
     font-size: 4.75em;
     margin-bottom: 0.5em;
+    color: rgb(255, 255, 255, 0.8);
 }
 
 .loginInput {
