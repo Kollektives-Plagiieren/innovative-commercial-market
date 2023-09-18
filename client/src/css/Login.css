@@ -59,10 +59,11 @@
     position: absolute;
     font-size: 1.2em;
     z-index: -1;
-    transform: translateY(-1.5em);
+    transform: translateY(0);
     color: white;
     pointer-events: none;
-    transition: 0.5s ease;
+    transition: 0.3s ease;
+    left: 0;
 }
 
 .loginInput input {
@@ -74,7 +75,7 @@
 }
 
 input:focus ~ label, input:valid ~ label {
-    top: -1em;
+    transform: translateY(-1.5em);
 }
 
 .loginInput ion-icon {

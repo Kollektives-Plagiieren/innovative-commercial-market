@@ -53,13 +53,13 @@ const Login = ({setAuth}) => {
                     <h1 className="loginHeader">Login</h1>
                     <form onSubmit={onSubmitForm} className="loginForm">
                         <div className="loginInput">
+                            <input ref={inputElement} type="text" name="email" value={email} onChange={e => onChange(e)} required />
                             <label for="">Email</label>
-                            <input ref={inputElement} type="email" name="email" value={email} onChange={e => onChange(e)} required />
                             <ion-icon name="mail-outline"></ion-icon>
                         </div>
                         <div className="loginInput">
-                            <label for="">Password</label>
                             <input type="password" name="password" value={password} onChange={e => onChange(e)} required />
+                            <label for="">Password</label>
                             <ion-icon name="lock-closed-outline"></ion-icon>
                         </div>
                         <div className="forget">
