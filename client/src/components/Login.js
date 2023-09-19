@@ -54,8 +54,6 @@ const Login = ({setAuth}) => {
                     <nav className="navbar">
                         <ul>
                             <li><div className="navBox"><a href="/">Home</a></div></li>
-                            <li><div className="navBox"><a href="/login">Login</a></div></li>
-                            <li><div className="navBox"><a href="/profile">Profile</a></div></li>
                         </ul>
                     </nav>
                 </div>
