@@ -103,7 +103,7 @@ input:focus ~ label, input:valid ~ label {
     border-radius: 4em;
     color: black;
     display: block;
-    background: white;
+    background: antiquewhite;
     border: none;
     height: 3em;
     width: 100%;
