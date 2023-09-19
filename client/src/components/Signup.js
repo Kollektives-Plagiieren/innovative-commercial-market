@@ -69,7 +69,9 @@ const Signup = ({setAuth}) => {
                             <ion-icon name="lock-closed-outline"></ion-icon>
                         </div>
                         <button className="signupButton">Sign up</button>
-                        <Link to="/login">Log in</Link>
+                        <div className="signupLogin">
+                            <p>Already signed up? <a href="/login">Log in</a></p>
+                        </div>
                     </form>
                 </div>
             </div>
