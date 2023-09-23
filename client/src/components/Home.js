@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/Home.css";
 import "../css/NavBar.css";
 
@@ -22,14 +22,46 @@ const Home = () => {
         };
       }, []);
 
+      const checkAuthenticated = async() => {
+        try {
+          const response = await fetch("http://localhost:5000/verify", {
+            method: "POST",
+            headers: {token: localStorage.token}
+          });
+    
+          const result = await response.json();
+    
+          result === true ? setIsAuthenticated(true) : setIsAuthenticated(false);
+        } catch (error) {
+          console.error(error.message);
+        }
+      };
+    
+      useEffect(() => {
+        checkAuthenticated();
+      }, []);
+    
+      const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+      const logout = async e => {
+        e.preventDefault();
+        try {
+            localStorage.removeItem("token");
+            setIsAuthenticated(false);
+        } catch (error) {
+            console.error(error.message);
+        }
+    };
+
       return (
         <div className="homeContainer">
             <div>
                 <nav className="navbar">
                     <ul>
                         <li><div className="navBox"><a href="/">Home</a></div></li>
-                        <li><div className="navBox"><a href="/login">Login</a></div></li>
-                        <li><div className="navBox"><a href="/profile">Profile</a></div></li>
+                        {!isAuthenticated && <li><div className="navBox"><a href="/login">Login</a></div></li>}
+                        {isAuthenticated && <li><div className="navBox"><a href="/profile">Profile</a></div></li>}
+                        {isAuthenticated && <li><div className="navBox"><a onClick={e => logout(e)} href="/">Logout</a></div></li>}
                     </ul>
                 </nav>
             </div>
