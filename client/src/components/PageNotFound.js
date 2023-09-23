@@ -1,9 +1,12 @@
 import React, { Fragment } from "react";
+import "../css/PageNotFound.css";
 
 const PageNotFound = () => {
     return (
         <Fragment>
-            <h1>Error 404: Fatherland not found</h1>
+            <div className="pageNotFoundBg">
+                <h1>Error 404: Sorry, but we couldn't find your dignity.</h1>
+            </div>
         </Fragment>
     );
 };
