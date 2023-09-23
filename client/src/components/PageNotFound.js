@@ -5,7 +5,8 @@ const PageNotFound = () => {
     return (
         <Fragment>
             <div className="pageNotFoundBg">
-                <h1>Error 404: Sorry, but we couldn't find your dignity.</h1>
+                <p className="errorMessage">Error 404: Hello sir, we couldn't find your virus.</p>
+                <p className="linkMessage">Instead you could go back to our &nbsp;<a href="/">Home page </a></p>
             </div>
         </Fragment>
     );
