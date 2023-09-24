@@ -59,9 +59,12 @@ const Home = () => {
                 <nav className="navbar">
                     <ul>
                         <li><div className="navBox"><a href="/">Home</a></div></li>
-                        {!isAuthenticated && <li><div className="navBox"><a href="/login">Login</a></div></li>}
-                        {isAuthenticated && <li><div className="navBox"><a href="/profile">Profile</a></div></li>}
-                        {isAuthenticated && <li><div className="navBox"><a onClick={e => logout(e)} href="/">Logout</a></div></li>}
+                        {isAuthenticated ? (
+                          <><li><div className="navBox"><a href="/profile">Profile</a></div></li>
+                          <li><div className="navBox"><a onClick={e => logout(e)} href="/">Logout</a></div></li></>
+                        ) : (
+                          <li><div className="navBox"><a href="/login">Login</a></div></li>
+                        )}
                     </ul>
                 </nav>
             </div>

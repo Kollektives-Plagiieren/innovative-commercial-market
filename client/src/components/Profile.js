@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
+import "../css/Profile.css";
+import "../css/NavBar.css";
 
 const Profile = ({setAuth}) => {
     const [name, setName] = useState("");
@@ -32,11 +34,21 @@ const Profile = ({setAuth}) => {
     }, []);
 
     return (
-        <div>
-            <h1 className="text-center my-5">Profile</h1>
-            <h2>Welcome {name}</h2>
-            <button onClick={e => logout(e)} className="btn btn-primary">Logout</button>
-        </div>
+        <Fragment>
+            <div className="profileBackground">
+                <div>
+                    <nav className="navbar">
+                        <ul>
+                            <li><div className="navBox"><a href="/">Home</a></div></li>
+                            <li><div className="navBox"><a onClick={e => logout(e)} href="/">Logout</a></div></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div className="mainElements">
+                    <p className="welcomeMessage">Welcome Mr. {name}</p>
+                </div>
+            </div>
+        </Fragment>
     );
 };
 
