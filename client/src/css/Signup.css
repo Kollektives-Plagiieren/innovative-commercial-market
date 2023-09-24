@@ -1,0 +1,25 @@
+.signupBackground {
+    background-image: url('../../public/img/lake-8231248.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#signupForm {
+    width: 25%;
+    margin-left: 37%;
+}
+
+#signupButton {
+    margin-right: 2em;
+    font-size: 20px;
+}
+
+#loginButton {
+    font-size: 20px;
+}
