@@ -54,8 +54,6 @@ const Login = ({setAuth}) => {
                     <nav className="navbar">
                         <ul>
                             <li><div className="navBox"><a href="/">Home</a></div></li>
-                            <li><div className="navBox"><a href="/login">Login</a></div></li>
-                            <li><div className="navBox"><a href="/profile">Profile</a></div></li>
                         </ul>
                     </nav>
                 </div>
@@ -63,17 +61,17 @@ const Login = ({setAuth}) => {
                     <h1 className="loginHeader">Login</h1>
                     <form onSubmit={onSubmitForm} className="loginForm">
                         <div className="loginInput">
-                            <input ref={inputElement} type="text" name="email" value={email} onChange={e => onChange(e)} required />
-                            <label for="">Email</label>
+                            <input id="emailInput" ref={inputElement} type="text" name="email" autoComplete="example@mail.com" value={email} onChange={e => onChange(e)} required />
+                            <label for="emailInput">Email</label>
                             <ion-icon name="mail-outline"></ion-icon>
                         </div>
                         <div className="loginInput">
-                            <input type="password" name="password" value={password} onChange={e => onChange(e)} required />
-                            <label for="">Password</label>
+                            <input id="passInput" type="password" name="password" value={password} onChange={e => onChange(e)} required />
+                            <label for="passInput">Password</label>
                             <ion-icon name="lock-closed-outline"></ion-icon>
                         </div>
                         <div className="forget">
-                            <label for=""><input type="checkbox"></input></label>
+                            <label><input id="rememberCheckbox" type="checkbox"></input></label>
                             <span>Remember me</span>
                             <a href="#">Forgot your password?</a>
                         </div>

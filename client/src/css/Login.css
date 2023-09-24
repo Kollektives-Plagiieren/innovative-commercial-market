@@ -114,12 +114,20 @@ input:focus ~ label, input:valid ~ label {
     margin-bottom: 1.5em;
 }
 
+.loginButton:hover {
+    color: white;
+    background: black;
+}
+
 .loginSignup a {
     margin-left: 0.2em;
     color: antiquewhite;
     font-weight: 700;
 }
 
+.loginSignup a:hover {
+    color: rgb(8, 223, 30);
+}
 
 @keyframes fadeIn {
     from {
