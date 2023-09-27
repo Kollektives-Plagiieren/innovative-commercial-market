@@ -1,0 +1,42 @@
+.pageNotFoundBg {
+    background-image: url('../../public/img/lake-8231248.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100%;
+    padding: 5% 5% 0 5%;
+}
+
+.errorMessage {
+    padding: 1em 2em 1em 3em;
+    background-color: rgba(250, 0, 0, 0.60);
+    border-radius: 2em;
+    display: flex;
+    align-items: center;
+    backdrop-filter: blur(3px);
+    margin: 0em 20% 2em 20%;
+    font-size: 36px;
+    color: white;
+}
+
+.linkMessage {
+    padding: 1em 2em 1em 3em;
+    background-color: rgba(30, 134, 4, 0.6);
+    border-radius: 2em;
+    display: flex;
+    align-items: center;
+    backdrop-filter: blur(3px);
+    margin: 0 20% 0 20%;
+    font-size: 36px;
+    color: white;
+}
+
+a {
+    color: rgb(17, 5, 133);
+}
+
+a:hover {
+    color: aquamarine;
+}
