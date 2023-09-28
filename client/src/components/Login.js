@@ -59,7 +59,7 @@ const Login = ({setAuth}) => {
                 </div>
                 <div className="loginContainer">
                     <h1 className="loginHeader">Login</h1>
-                    <form onSubmit={onSubmitForm} className="loginForm">
+                    <form onSubmit={onSubmitForm}>
                         <div className="loginInput">
                             <input id="emailInput" ref={inputElement} type="text" name="email" autoComplete="example@mail.com" value={email} onChange={e => onChange(e)} required />
                             <label for="emailInput">Email</label>
