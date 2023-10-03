@@ -62,12 +62,12 @@ const Login = ({setAuth}) => {
                     <form onSubmit={onSubmitForm}>
                         <div className="loginInput">
                             <input id="emailInput" ref={inputElement} type="text" name="email" autoComplete="example@mail.com" value={email} onChange={e => onChange(e)} required />
-                            <label for="emailInput">Email</label>
+                            <label htmlFor="emailInput">Email</label>
                             <ion-icon name="mail-outline"></ion-icon>
                         </div>
                         <div className="loginInput">
                             <input id="passInput" type="password" name="password" value={password} onChange={e => onChange(e)} required />
-                            <label for="passInput">Password</label>
+                            <label htmlFor="passInput">Password</label>
                             <ion-icon name="lock-closed-outline"></ion-icon>
                         </div>
                         <div className="forget">
