@@ -55,17 +55,17 @@ const Signup = ({setAuth}) => {
                     <form onSubmit={onSubmitForm}>
                         <div className="signupInput">
                             <input type="text" name="name" value={name} onChange={e => onChange(e)} required />
-                            <label for="">Username</label>
+                            <label htmlFor="">Username</label>
                             <ion-icon name="person-outline"></ion-icon>
                         </div>
                         <div className="signupInput">
                             <input type="text" name="email" value={email} onChange={e => onChange(e)} required />
-                            <label for="">Email</label>
+                            <label htmlFor="">Email</label>
                             <ion-icon name="mail-outline"></ion-icon>
                         </div>
                         <div className="signupInput">
                             <input type="password" name="password" value={password}  onChange={e => onChange(e)} required />
-                            <label for="">Password</label>
+                            <label htmlFor="">Password</label>
                             <ion-icon name="lock-closed-outline"></ion-icon>
                         </div>
                         <button className="signupButton">Sign up</button>
