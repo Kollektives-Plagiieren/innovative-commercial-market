@@ -18,14 +18,18 @@ import PageNotFound from "./components/PageNotFound";
 function App() {
   const checkAuthenticated = async() => {
     try {
-      const response = await fetch("http://localhost:5000/verify", {
-        method: "POST",
-        headers: {token: localStorage.token}
-      });
+      if (localStorage.token) {
+        const response = await fetch("http://localhost:5000/verify", {
+          method: "POST",
+          headers: {token: localStorage.token}
+        });
 
-      const result = await response.json();
+        const result = await response.json();
 
-      result === true ? setIsAuthenticated(true) : setIsAuthenticated(false);
+        result === true ? setIsAuthenticated(true) : setIsAuthenticated(false);
+      } else {
+        setIsAuthenticated(false);
+      }
     } catch (error) {
       console.error(error.message);
     }
@@ -47,7 +51,7 @@ function App() {
         <div className="container">
           <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route exact path="/signup" element={!isAuthenticated ? (<Signup setAuth={setAuth}/>) : (<Navigate to="/login" />)} />
+            <Route exact path="/signup" element={!isAuthenticated ? (<Signup setAuth={setAuth}/>) : (<Navigate to="/profile" />)} />
             <Route exact path="/login" element={!isAuthenticated ? (<Login setAuth={setAuth}/>) : (<Navigate to="/profile" />)} />
             <Route exact path="/profile" element={isAuthenticated ? (<Profile setAuth={setAuth}/>) : (<Navigate to="/login" />)} />
             <Route path="/*" element={<PageNotFound />}/>
