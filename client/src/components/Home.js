@@ -5,12 +5,14 @@ import "../css/NavBar.css";
 import {Wave} from "@foobar404/wave";
 
 const Home = () => {
+    let wave;
     useEffect(() => {
         const canvasElement = document.querySelector("canvas");
         const audioElement = document.querySelector("audio");
     
         if (audioElement && canvasElement) {
-            const wave = new Wave(audioElement, canvasElement);
+          if (!wave) {
+            wave = new Wave(audioElement, canvasElement);
             wave.addAnimation(new wave.animations.Lines({
                 count: 30,
                 lineWidth: 1,
@@ -19,19 +21,24 @@ const Home = () => {
             }));
 
             audioElement.volume = 0.2;
+          }
         };
       }, []);
 
       const checkAuthenticated = async() => {
         try {
-          const response = await fetch("http://localhost:5000/verify", {
-            method: "POST",
-            headers: {token: localStorage.token}
-          });
-    
-          const result = await response.json();
-    
-          result === true ? setIsAuthenticated(true) : setIsAuthenticated(false);
+          if (localStorage.token) {
+            const response = await fetch("http://localhost:5000/verify", {
+              method: "POST",
+              headers: {token: localStorage.token}
+            });
+
+            const result = await response.json();
+
+            result === true ? setIsAuthenticated(true) : setIsAuthenticated(false);
+          } else {
+            setIsAuthenticated(false);
+          }
         } catch (error) {
           console.error(error.message);
         }
