@@ -71,7 +71,7 @@
 }
 
 .signupInput ion-icon {
-    font-size: 1.3em;
+    font-size: 1.6em;
     padding-left: 1em;
 }
 
@@ -88,6 +88,11 @@
     margin-top: 1.5em;
     font-weight: 700;
     margin-bottom: 1.5em;
+}
+
+.signupButton:hover {
+    color: white;
+    background: black;
 }
 
 .signupLogin a{
