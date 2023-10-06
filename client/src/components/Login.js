@@ -9,8 +9,18 @@ const Login = ({setAuth}) => {
     });
 
     const { email, password } = inputs;
-
     const onChange = e => setInputs({ ...inputs, [e.target.name]: e.target.value });
+
+    const [iconName, setIconName] = useState("eye-off-outline");
+    const [isPassVisible, setIsPassVisible] = useState(false);
+
+    const handleClickShowPassword = () => {
+        // handles the state when mouse is over the icon and a click occur, but varaible has not changed yet
+        setIconName(!isPassVisible ? "eye" : "eye-off");
+        setIsPassVisible(!isPassVisible);
+    }
+    const changeIconSolid = () => setIconName(isPassVisible ? "eye" : "eye-off");
+    const changeIconRegular = () => setIconName(isPassVisible ? "eye-outline" : "eye-off-outline");
 
     const onSubmitForm = async e => {
         e.preventDefault();
@@ -66,13 +76,15 @@ const Login = ({setAuth}) => {
                             <ion-icon name="mail-outline"></ion-icon>
                         </div>
                         <div className="loginInput">
-                            <input id="passInput" type="password" name="password" value={password} onChange={e => onChange(e)} required />
+                            <input id="passInput" type={isPassVisible ? "text" : "password"} name="password" value={password} onChange={e => onChange(e)} required />
                             <label htmlFor="passInput">Password</label>
-                            <ion-icon name="lock-closed-outline"></ion-icon>
+                            <ion-button shape="round" aria-label="show-password-btn" onClick={handleClickShowPassword}>
+                                <ion-icon name={iconName} title="Show password" onMouseEnter={changeIconSolid}
+                                onMouseLeave={changeIconRegular}></ion-icon>
+                            </ion-button>
                         </div>
                         <div className="forget">
-                            <label><input id="rememberCheckbox" type="checkbox"></input></label>
-                            <span>Remember me</span>
+                            <label><input id="rememberCheckbox" type="checkbox"></input>&nbsp; Remember me</label>
                             <a href="#">Forgot your password?</a>
                         </div>
                         <button className="loginButton">Log in</button>
