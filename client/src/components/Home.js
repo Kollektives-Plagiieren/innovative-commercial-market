@@ -70,7 +70,8 @@ const Home = () => {
                           <><li><div className="navBox"><a href="/profile">Profile</a></div></li>
                           <li><div className="navBox"><a onClick={e => logout(e)} href="/">Logout</a></div></li></>
                         ) : (
-                          <li><div className="navBox"><a href="/login">Login</a></div></li>
+                          <><li><div className="navBox"><a href="/login">Login</a></div></li>
+                          <li><div className="navBox"><a href="/signup">Signup</a></div></li></>
                         )}
                     </ul>
                 </nav>
