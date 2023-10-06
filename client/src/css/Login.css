@@ -72,7 +72,7 @@ input:focus ~ label, input:valid ~ label {
 }
 
 .loginInput ion-icon {
-    font-size: 1.3em;
+    font-size: 1.6em;
     padding-left: 1em;
 }
 
@@ -83,15 +83,22 @@ input:focus ~ label, input:valid ~ label {
     padding-bottom: 1em;
 }
 
-.forget span {
+.forget input {
+    transform: scale(1.5);
+}
+
+.forget label {
     margin-left: 0.2em;
+    font-size: 1.1em;
+    width: 14em;
 }
 
 .forget a {
-    margin-left: 3em;
     color: antiquewhite;
     font-weight: 700;
     text-decoration: none;
+    font-size: 1.1em;
+    text-align: center;
 }
 
 .forget a:hover {
